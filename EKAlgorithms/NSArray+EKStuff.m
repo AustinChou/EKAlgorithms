@@ -11,6 +11,18 @@
 @implementation NSArray (EKStuff);
 
 #pragma mark - ARRAY STUFF
+
+#pragma mark - C type array creation
+
+- (instancetype)initWithCount:(NSUInteger)count FilledWith:(NSObject *)obj
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        [array addObject:obj];
+    }
+    return [NSArray arrayWithArray:array];
+}
+
 #pragma mark - Max element in array
 
 - (NSUInteger)indexOfMaximumElement

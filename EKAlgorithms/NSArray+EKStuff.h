@@ -9,6 +9,12 @@
 
 @interface NSArray (EKStuff)
 
+/**
+ 
+ C type array create method
+ 
+ */
+- (instancetype)initWithCount:(NSUInteger)count FilledWith:(NSObject *)obj;
 
 /**
  Get the index of maximum element in array.

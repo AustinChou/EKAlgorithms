@@ -33,6 +33,10 @@ int main(int argc, const char *argv[])
         for (int i = 0; i < 5; i++) {
             [array addObject:[NSNumber numberWithInt:arc4random() % 20]];
         }
+        
+        //C type array creation
+        NSArray *cArray = [[NSArray alloc] initWithCount:12 FilledWith:@1];
+        NSLog(@"C-like array creation: %@", cArray);
 
         //Max element of array
         NSLog(@"Max element of created array %@ equals to %@ and stored at index %li", [array debugDescription],
