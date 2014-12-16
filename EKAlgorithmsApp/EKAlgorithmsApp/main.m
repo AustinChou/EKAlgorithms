@@ -31,7 +31,7 @@ int main(int argc, const char *argv[])
         //Init array with 5 random elements
         NSMutableArray *array = [NSMutableArray array];
         for (int i = 0; i < 5; i++) {
-            [array addObject:[NSNumber numberWithInt:arc4random() % 20]];
+            [array addObject:@(arc4random() % 20)];
         }
         
         //C type array creation
@@ -40,12 +40,12 @@ int main(int argc, const char *argv[])
 
         //Max element of array
         NSLog(@"Max element of created array %@ equals to %@ and stored at index %li", [array debugDescription],
-              [array objectAtIndex:(long)[array indexOfMaximumElement]],
+              array[(long)[array indexOfMaximumElement]],
               (long)[array indexOfMaximumElement]);
 
         //Get the Max and Min Simultaneously.
         NSArray *indexes = [array indexesOfMinimumAndMaximumElements];
-        NSLog(@"Min and max elements of created array %@ equal to %@ and %@ and stored at indexes: %@ %@", [array debugDescription], [array objectAtIndex:[[indexes firstObject] unsignedIntegerValue]], [array objectAtIndex:[[indexes lastObject] unsignedIntegerValue]],
+        NSLog(@"Min and max elements of created array %@ equal to %@ and %@ and stored at indexes: %@ %@", [array debugDescription], array[[[indexes firstObject] unsignedIntegerValue]], array[[[indexes lastObject] unsignedIntegerValue]],
               [indexes firstObject], [indexes lastObject]);
 
         //Longest string from array
@@ -62,7 +62,20 @@ int main(int argc, const char *argv[])
 
         //Union of two arrays
         NSLog(@"Union is %@", [@[@"Honda", @"Toyota"] unionWithoutDuplicatesWithArray: @[@"Toyota", @"Alfa Romeo"]]);
-
+        
+        // Union of two arrays for key
+        NSString *someKey = @"someKey";
+        NSMutableArray *oneArray = [NSMutableArray arrayWithCapacity:100];
+        NSMutableArray *twoArray = [NSMutableArray arrayWithCapacity:100];
+        for (int i = 0; i < 100; i ++) {
+            NSMutableDictionary *currentDic = [[NSMutableDictionary alloc] init];
+            [currentDic setValue:[NSString stringWithFormat:@"EKAlgorithms%d", i] forKeyPath:someKey];
+            [oneArray addObject:currentDic];
+            [twoArray addObject:currentDic];
+        }
+        [oneArray addObject:@{someKey: @"EKAlgorithms100"}];
+        NSLog(@"Union some key is %@", [oneArray unionWithoutDuplicatesWithArray:twoArray forKey:someKey]);
+        
         //Find duplicates
         NSLog(@"Result of finding duplicates is %@", [@[@"foo", @"bar", @"buzz", @"foo"] hasDuplicates] ? @"YES" : @"NO");
 
@@ -159,6 +172,10 @@ int main(int argc, const char *argv[])
 
         //Levenshtein Distance
         NSLog(@"Levenshtein Distance of levenshtein and meilenstein is --> %ld", (long)[@"levenshtein" LD_WithString: @"meilenstein"]);
+        
+        // KMP
+        NSLog(@"Index of KMP string match is --> %ld", [@"bacbababaabcbab" KMPindexOfSubstringWithPattern:@"bab"]);
+        
 
         //NUMERIC PROBLEMS--------------------------------------------------------------------------
 

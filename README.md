@@ -17,12 +17,13 @@ Arrays and Lists
 5. Array reverse.
 6. Intersection of two arrays.
 7. Union of two arrays (with remove duplicates).
-8. Find duplicates.
-9. Array with N unique/not unique random objects.
-10. Check if array is sorted.
-11. Array shuffle (Fisher-Yates).
-12. Sum of array elements.
-13. N of occurences of each element in array.
+8. Union of two arrays (with remove duplicates) for some key.
+9. Find duplicates.
+10. Array with N unique/not unique random objects.
+11. Check if array is sorted.
+12. Array shuffle (Fisher-Yates).
+13. Sum of array elements.
+14. N of occurences of each element in array.
 
 Search Algorithms
 -----------------
@@ -59,6 +60,7 @@ Strings
 10. Last occurrence of "needle" in a "haystack".
 11. Longest common subsequence.
 12. Levenshtein distance.
+13. KMP (Knuth–Morris–Pratt).
 
 Numeric Algorithms
 ------------------
@@ -138,7 +140,4 @@ Special thanks to these guys for their contributions to the project's developmen
 - [@stanislaw](https://github.com/stanislaw)
 - [@vittoriom ](https://github.com/vittoriom)
 - [@AustinChou](https://github.com/AustinChou)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

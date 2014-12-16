@@ -10,9 +10,9 @@
 @interface EKNode : NSObject
 
 @property (nonatomic, strong) NSObject *value;
-@property (nonatomic, strong) EKNode *previous;
-@property (nonatomic, strong) EKNode *next;
+@property (nonatomic, strong) EKNode   *previous;
+@property (nonatomic, strong) EKNode   *next;
 
-- (instancetype)initWithObject:(NSObject *)object;
+- (instancetype)initWithObject:(NSObject *)object NS_DESIGNATED_INITIALIZER;
 
 @end
